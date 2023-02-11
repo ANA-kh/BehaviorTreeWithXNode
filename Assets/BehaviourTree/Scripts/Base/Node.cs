@@ -1,43 +1,35 @@
 namespace BehaviourTree
 {
+    [System.Serializable]
     public class Node
     {
         public enum State
         {
+            Inactive,
             Running,
             Failure,
             Success
         }
         
-        public State state = State.Running;
-        public bool started = false;
-        
+        public State state = State.Inactive;
+
         public State Update()
         {
-            if (!started)
-            {
-                OnStart();
-                started = true;
-            }
-
+            if (state != State.Running) OnStart();
             state = OnUpdate();
-
-            if (state != State.Running)
-            {
-                OnStop();
-                started = false;
-            }
-
+            if (state != State.Running) OnStop();
+            
             return state;
         }
         
         public void Abort()
         {
-            //TODO
+            OnAbort();
         }
         
         protected virtual void OnStart() { }
         protected virtual void OnStop() { }
         protected virtual State OnUpdate() { return State.Running; }
+        protected virtual void OnAbort() { }
     }
 }
