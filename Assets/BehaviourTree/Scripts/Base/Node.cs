@@ -1,4 +1,4 @@
-namespace BehaviourTree
+namespace BT
 {
     [System.Serializable]
     public class Node

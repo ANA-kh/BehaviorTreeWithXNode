@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BehaviourTree
+namespace BT
 {
     [System.Serializable]
     public abstract class CompositeNode : Node

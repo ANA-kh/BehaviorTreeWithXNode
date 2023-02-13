@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BehaviourTree
+namespace BT
 {
     public class BehaviourTree
     {
@@ -10,16 +10,14 @@ namespace BehaviourTree
         public Node.State treeState = Node.State.Running;
         
         
-        public BehaviourTree() {
-            rootNode = new RootNode();
+        public BehaviourTree(Node root)
+        {
+            rootNode = root;
             nodes.Add(rootNode);
         }
 
         public Node.State Update() {
-            if (rootNode.state == Node.State.Running) {
-                treeState = rootNode.Update();
-            }
-            return treeState;
+            return rootNode.Update();
         }
 
 

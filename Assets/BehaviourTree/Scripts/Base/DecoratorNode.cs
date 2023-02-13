@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BehaviourTree
+namespace BT
 {
     [System.Serializable]
     public abstract class DecoratorNode : Node
