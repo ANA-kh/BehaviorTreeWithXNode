@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using XNode;
 using Node = XNode.Node;
@@ -10,7 +11,7 @@ public abstract class BehaviourTreeGraphNode : Node
 	[SerializeReference]
 	[NotShowInGraphNode]
 	protected BT.Node treeNode;
-	public string Title => name + ":" + treeNode?.GetType().Name;
+	public string Title => name.Replace(" Graph","") + ":" + TreeNode?.GetType().Name;
 
 	// Return the correct value of an output port when requested
 	public override object GetValue(NodePort port) {
@@ -19,16 +20,21 @@ public abstract class BehaviourTreeGraphNode : Node
 
 	public virtual BT.Node BuildTreeNode()
 	{
-		return treeNode;
+		return TreeNode;
 	}
 
-	public virtual void SetTreeNode(BT.Node node)
-	{
-		treeNode = node;
-	}
+	// public void SetTreeNode(BT.Node node)
+	// {
+	// 	TreeNode = node;
+	// }
 
 	public bool IsRoot { get; set; }
-	
+	public BT.Node TreeNode
+	{
+		get => treeNode;
+		set => treeNode = value;
+	}
+
 	[ContextMenu("Set as root")]
 	public void SetAsRoot()
 	{
@@ -43,5 +49,13 @@ public abstract class BehaviourTreeGraphNode : Node
 	public class NotShowInGraphNodeAttribute : Attribute
 	{
 		
+	}
+
+	public override Node Copy()
+	{
+		//TODO copy treeNode
+		// var node = Instantiate(this);
+		// node.treeNode = treeNode.Clone();
+		return base.Copy();
 	}
 }

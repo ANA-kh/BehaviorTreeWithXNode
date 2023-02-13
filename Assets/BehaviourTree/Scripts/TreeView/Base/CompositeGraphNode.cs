@@ -8,7 +8,7 @@ public class CompositeGraphNode : BehaviourTreeGraphNode
 
     public override BT.Node BuildTreeNode()
     {
-        var composite = treeNode as CompositeNode;
+        var composite = TreeNode as CompositeNode;
         composite.children.Clear();
         var children = GetOutputPort("children").GetConnections().Select((port)=>port.node).ToList();
         children.Sort((b, a) => a.position.y.CompareTo(b.position.x));

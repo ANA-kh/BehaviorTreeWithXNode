@@ -8,7 +8,7 @@ public class DecoratorGraphNode : BehaviourTreeGraphNode
 	
     public override BT.Node BuildTreeNode()
     {
-        var decorator = treeNode as DecoratorNode;
+        var decorator = TreeNode as DecoratorNode;
         var childPort = GetOutputPort("child").GetConnection(0);
         if (child == null)
         {

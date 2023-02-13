@@ -5,12 +5,19 @@ using XNode;
 using Node = XNode.Node;
 
 [CreateAssetMenu]
-public class BehaviourTreeGraph : NodeGraph 
+public class BehaviourTreeGraph : NodeGraph
 {
-    private BehaviourTreeGraphNode root;
+    public BehaviourTree BehaviourTree = new BehaviourTree();
+    [SerializeReference] private BehaviourTreeGraphNode root;
     public BehaviourTree Build()
     {
-        return new BehaviourTree(root.BuildTreeNode());
+        if (root == null)
+        {
+            Debug.Log("no Root Node");
+            return null;
+        }
+        BehaviourTree.RootNode = root.BuildTreeNode();
+        return BehaviourTree;
     }
     
     public void SetRoot(BehaviourTreeGraphNode node)
