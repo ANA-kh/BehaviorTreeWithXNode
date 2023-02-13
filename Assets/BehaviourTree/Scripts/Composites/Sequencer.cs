@@ -1,4 +1,4 @@
-namespace BehaviourTree
+namespace BT.Composites
 {
     [System.Serializable]
     public class Sequencer : CompositeNode
