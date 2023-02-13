@@ -5,6 +5,8 @@ using BT;
 public class CompositeGraphNode : BehaviourTreeGraphNode
 {
     [Output] public BehaviourTreeGraphPort children;
+    
+    public override string Title =>"CP: " + TreeNode?.GetType().Name;
 
     public override BT.Node BuildTreeNode()
     {

@@ -5,6 +5,8 @@ using UnityEngine;
 public class DecoratorGraphNode : BehaviourTreeGraphNode
 {
     [Output(connectionType = ConnectionType.Override)] public BehaviourTreeGraphPort child;
+    
+    public override string Title =>"D: " + TreeNode?.GetType().Name;
 	
     public override BT.Node BuildTreeNode()
     {

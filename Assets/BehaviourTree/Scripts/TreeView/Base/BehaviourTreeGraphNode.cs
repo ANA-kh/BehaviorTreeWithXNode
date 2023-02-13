@@ -4,6 +4,7 @@ using UnityEngine;
 using XNode;
 using Node = XNode.Node;
 
+[NodeWidth(120)]
 public abstract class BehaviourTreeGraphNode : Node 
 {
 
@@ -11,7 +12,7 @@ public abstract class BehaviourTreeGraphNode : Node
 	[SerializeReference]
 	[NotShowInGraphNode]
 	protected BT.Node treeNode;
-	public string Title => name.Replace(" Graph","") + ":" + TreeNode?.GetType().Name;
+	public virtual string Title => name.Replace(" Graph","") + ":" + TreeNode?.GetType().Name;
 
 	// Return the correct value of an output port when requested
 	public override object GetValue(NodePort port) {
