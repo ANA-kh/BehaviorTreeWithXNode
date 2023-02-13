@@ -1,32 +1,28 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace BT
 {
+    [System.Serializable]
     public class BehaviourTree
     {
-        private Node rootNode;
-        public List<Node> nodes = new List<Node>();
-        private int size;
-        public Node.State treeState = Node.State.Running;
-        
-        
+        public Node RootNode { get; set; }
+        public GameObject Agent { get; set; }
+        public Blackboard Blackboard = new Blackboard();
+        [HideInInspector]
+        public Node.State TreeState = Node.State.Inactive;
+
+        public BehaviourTree() { }
+
         public BehaviourTree(Node root)
         {
-            rootNode = root;
-            nodes.Add(rootNode);
+            RootNode = root;
         }
 
-        public Node.State Update() {
-            return rootNode.Update();
+        public Node.State Update()
+        {
+            return RootNode.Update();
         }
-
-
-
-
-        public BehaviourTree Clone() {
-            //TODO
-            return null;
-        }
-
     }
 }

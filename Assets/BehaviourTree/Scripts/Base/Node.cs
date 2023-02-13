@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace BT
 {
     [System.Serializable]
@@ -11,6 +13,7 @@ namespace BT
             Success
         }
         
+        [HideInInspector]
         public State state = State.Inactive;
 
         public State Update()
