@@ -1,4 +1,5 @@
 ﻿using System;
+using BT;
 using Unity.VisualScripting;
 using UnityEngine;
 using XNode;
@@ -29,7 +30,8 @@ public abstract class BehaviourTreeGraphNode : Node
 	// 	TreeNode = node;
 	// }
 
-	public bool IsRoot { get; set; }
+	[HideInInspector]
+	public bool IsRoot;
 	public BT.BehaviourNode TreeNode
 	{
 		get => treeNode;
@@ -51,6 +53,12 @@ public abstract class BehaviourTreeGraphNode : Node
 	{
 		
 	}
+
+	private void OnDestroy()
+	{
+		treeNode.state = BehaviourNode.State.Inactive;
+	}
+	
 
 	public override Node Copy()
 	{

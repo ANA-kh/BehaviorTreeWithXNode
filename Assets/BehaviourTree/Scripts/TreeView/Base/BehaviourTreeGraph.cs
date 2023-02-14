@@ -41,4 +41,21 @@ public class BehaviourTreeGraph : NodeGraph
 
         return node;
     }
+
+    public override NodeGraph Copy()
+    {
+        var graph = base.Copy() as BehaviourTreeGraph;
+        
+        //SetRoot
+        foreach (var node in graph.nodes)
+        {
+            if (node is BehaviourTreeGraphNode behaviourTreeGraphNode && behaviourTreeGraphNode.IsRoot)
+            {
+                graph.root = behaviourTreeGraphNode;
+                break;
+            }
+        }
+        //graph.root = graph.nodes.Find( node  => (node as BehaviourTreeGraphNode).IsRoot) as BehaviourTreeGraphNode;
+        return graph;
+    }
 }
