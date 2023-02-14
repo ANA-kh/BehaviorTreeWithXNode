@@ -1,5 +1,5 @@
 namespace BT
 {
     [System.Serializable]
-    public abstract class ActionNode : Node{ }
+    public abstract class ActionNode : BehaviourNode{ }
 }

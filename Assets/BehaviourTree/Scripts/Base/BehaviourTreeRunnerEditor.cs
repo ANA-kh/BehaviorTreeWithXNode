@@ -22,6 +22,16 @@ namespace BT
                     NodeEditorWindow.Open(graph as  BehaviourTreeGraph);
                 }
             }
+            
+            //TODO Delete  test暂时
+            if (GUILayout.Button("ChangeBlackBoard"))
+            {
+                if (Application.isPlaying)
+                {
+                    var runner = target as BehaviourTreeRunner;
+                    runner.BTree.Blackboard.Set("CurStage", 3);
+                }
+            }
         }
     }
 }

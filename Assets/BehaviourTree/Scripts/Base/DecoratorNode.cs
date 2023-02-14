@@ -3,10 +3,14 @@ using UnityEngine;
 namespace BT
 {
     [System.Serializable]
-    public abstract class DecoratorNode : Node
+    public abstract class DecoratorNode : BehaviourNode
     {
-        [SerializeReference]
-        [HideInInspector]
-        public Node child;
+        protected BehaviourNode child;
+        
+        public void AddChild(BehaviourNode child)
+        {
+            this.child = child;
+            child.SetParent(this, 0);
+        }
     }
 }

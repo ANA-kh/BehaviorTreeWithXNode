@@ -10,33 +10,38 @@ namespace BT
         private BehaviourTreeGraph _treeGraphOnRuntime;
         public float TickTime = 0.2f;
         private float _timer;
+        public BehaviourTree BTree
+        {
+            get => _behaviourTree;
+            set => _behaviourTree = value;
+        }
 
         private void OnEnable()   
         {
             //_treeGraphOnRuntime = Instantiate(TreeGraph);   wrong
             _treeGraphOnRuntime = (BehaviourTreeGraph)TreeGraph.Copy();
             //_treeGraphOnRuntime = ScriptableObject.CreateInstance<BehaviourTreeGraph>();
-            _behaviourTree = _treeGraphOnRuntime.Build();
-            _behaviourTree.Agent = gameObject;
-            _behaviourTree.TreeState = Node.State.Running;
+            BTree = _treeGraphOnRuntime.Build();
+            BTree.Agent = gameObject;
+            BTree.TreeState = BehaviourNode.State.Running;
         }
 
         private void Update()
         {
-            if (_behaviourTree.TreeState == Node.State.Running)
+            if (BTree.TreeState == BehaviourNode.State.Running)
             {
                 _timer += Time.deltaTime;
                 if (_timer > TickTime)
                 {
                     _timer -= TickTime;
-                    _behaviourTree.Update();
+                    BTree.Update();
                 }
             }
         }
 
         private void OnDestroy()
         {
-            _behaviourTree.TreeState = Node.State.Inactive;
+            BTree.TreeState = BehaviourNode.State.Inactive;
         }
     }
 }
