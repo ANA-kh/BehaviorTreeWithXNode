@@ -11,7 +11,7 @@ public abstract class BehaviourTreeGraphNode : Node
 	[Input] public BehaviourTreeGraphPort parent;
 	[SerializeReference]
 	[NotShowInGraphNode]
-	protected BT.Node treeNode;
+	protected BT.BehaviourNode treeNode;
 	public virtual string Title => name.Replace(" Graph","") + ":" + TreeNode?.GetType().Name;
 
 	// Return the correct value of an output port when requested
@@ -19,7 +19,7 @@ public abstract class BehaviourTreeGraphNode : Node
 		return null; // Replace this
 	}
 
-	public virtual BT.Node BuildTreeNode()
+	public virtual BT.BehaviourNode BuildTreeNode()
 	{
 		return TreeNode;
 	}
@@ -30,7 +30,7 @@ public abstract class BehaviourTreeGraphNode : Node
 	// }
 
 	public bool IsRoot { get; set; }
-	public BT.Node TreeNode
+	public BT.BehaviourNode TreeNode
 	{
 		get => treeNode;
 		set => treeNode = value;

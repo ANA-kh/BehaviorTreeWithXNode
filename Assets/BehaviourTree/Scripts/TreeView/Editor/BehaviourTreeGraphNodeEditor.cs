@@ -56,7 +56,7 @@ public class BehaviourTreeGraphNodeEditor : NodeEditor
         if (Application.isPlaying == false) return GetCostumeTint();
 
         var node = target as BehaviourTreeGraphNode;
-        if (node && node.TreeNode.state == Node.State.Running)return runningColor;
+        if (node && node.TreeNode.state == BehaviourNode.State.Running)return runningColor;
         
         return GetCostumeTint();
     }

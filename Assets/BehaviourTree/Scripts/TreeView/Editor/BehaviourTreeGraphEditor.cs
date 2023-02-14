@@ -5,7 +5,6 @@ using UnityEditor;
 using UnityEngine;
 using XNode;
 using XNodeEditor;
-using Node = BT.Node;
 
 namespace SimpleTest
 {
@@ -68,6 +67,17 @@ namespace SimpleTest
                     NodeEditorWindow.current.AutoConnect(node);
                 });
             }
+            
+            types = TypeCache.GetTypesDerivedFrom<ConditionNode>();
+            foreach (var type in types)
+            {
+                menu.AddItem(new GUIContent($"[Condition]/{type.Name}"), false, () =>
+                {
+                    var node = CreateNode(typeof(ConditionGraphNode), pos) as ConditionGraphNode;
+                    node.TreeNode = Activator.CreateInstance(type) as ConditionNode;
+                    NodeEditorWindow.current.AutoConnect(node);
+                });
+            }
         }
 
         public override NoodlePath GetNoodlePath(NodePort output, NodePort input)
@@ -77,8 +87,9 @@ namespace SimpleTest
 
         public override Gradient GetNoodleGradient(NodePort output, NodePort input)
         {
+            if (input == null)return base.GetNoodleGradient(output, input);
             var node = input.node as BehaviourTreeGraphNode;
-            if (node.TreeNode.state == Node.State.Running)
+            if (node.TreeNode.state == BehaviourNode.State.Running)
             {
                 var grad = new Gradient();
                 grad.SetKeys(new[]

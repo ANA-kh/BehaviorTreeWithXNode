@@ -8,7 +8,7 @@ public class DecoratorGraphNode : BehaviourTreeGraphNode
     
     public override string Title =>"D: " + TreeNode?.GetType().Name;
 	
-    public override BT.Node BuildTreeNode()
+    public override BT.BehaviourNode BuildTreeNode()
     {
         var decorator = TreeNode as DecoratorNode;
         var childPort = GetOutputPort("child").GetConnection(0);
@@ -17,7 +17,7 @@ public class DecoratorGraphNode : BehaviourTreeGraphNode
             Debug.Log("Decorator has no child");
         }
 		
-        decorator.child = (childPort.node as BehaviourTreeGraphNode).BuildTreeNode();
+        decorator.AddChild((childPort.node as BehaviourTreeGraphNode).BuildTreeNode());
         return decorator;
     }
 }

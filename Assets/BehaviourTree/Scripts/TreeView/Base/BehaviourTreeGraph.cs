@@ -16,7 +16,7 @@ public class BehaviourTreeGraph : NodeGraph
             Debug.Log("no Root Node");
             return null;
         }
-        BehaviourTree.RootNode = root.BuildTreeNode();
+        BehaviourTree.SetRootNode(root.BuildTreeNode());
         return BehaviourTree;
     }
     
