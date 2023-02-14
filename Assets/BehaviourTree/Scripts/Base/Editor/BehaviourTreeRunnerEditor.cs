@@ -29,7 +29,7 @@ namespace BT
                 if (Application.isPlaying)
                 {
                     var runner = target as BehaviourTreeRunner;
-                    runner.BTree.Blackboard.Set("CurStage", 3);
+                    runner.BTree.Blackboard.Set("CurStage", 1);
                 }
             }
         }
