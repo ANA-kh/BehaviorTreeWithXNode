@@ -222,7 +222,7 @@ MonoBehaviour:
       type: {class: Log, ns: BT.Actions, asm: Assembly-CSharp}
       data:
         state: 0
-        Count: 5
+        Count: 20
         message: 1
 --- !u!114 &2999970294405032747
 MonoBehaviour:
@@ -319,7 +319,7 @@ MonoBehaviour:
       type: {class: Repeat, ns: BT.Decorators, asm: Assembly-CSharp}
       data:
         state: 0
-        repeatCount: 5
+        repeatCount: 2
 --- !u!114 &4416731680489636799
 MonoBehaviour:
   m_ObjectHideFlags: 0
