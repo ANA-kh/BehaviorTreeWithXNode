@@ -13,7 +13,7 @@ public class CompositeGraphNode : BehaviourTreeGraphNode
         var composite = TreeNode as CompositeNode;
         composite.ClearChildren();
         var children = GetOutputPort("children").GetConnections().Select((port)=>port.node).ToList();
-        children.Sort((b, a) => a.position.y.CompareTo(b.position.x));
+        children.Sort((a, b) => a.position.y.CompareTo(b.position.x));
         foreach (var child in children)
         {
             var childNode = child as BehaviourTreeGraphNode;
