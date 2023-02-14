@@ -44,7 +44,7 @@ namespace BT
             this.indexInParent = indexInParent;
         }
         
-        public void SetTree(BehaviourTree tree)
+        public virtual void Init(BehaviourTree tree)
         {
             this.tree = tree;
         }

@@ -43,7 +43,7 @@ namespace BT
             Blackboard.Init();
             TreeState = BehaviourNode.State.Running;
             
-            Traverse(_rootNode, node => node.SetTree(this));
+            Traverse(_rootNode, node => node.Init(this));
         }
         
         
