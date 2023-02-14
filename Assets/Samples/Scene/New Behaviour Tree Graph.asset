@@ -177,6 +177,7 @@ MonoBehaviour:
   - {fileID: -5775815597698991552}
   - {fileID: 2999970294405032747}
   - {fileID: -88762805110855090}
+  - {fileID: 7940033848906073968}
   BehaviourTree:
     Blackboard:
       CurStage: 8
@@ -222,7 +223,7 @@ MonoBehaviour:
       type: {class: Log, ns: BT.Actions, asm: Assembly-CSharp}
       data:
         state: 0
-        Count: 20
+        Count: 10
         message: 1
 --- !u!114 &2999970294405032747
 MonoBehaviour:
@@ -264,7 +265,7 @@ MonoBehaviour:
       type: {class: Log, ns: BT.Actions, asm: Assembly-CSharp}
       data:
         state: 0
-        Count: 5
+        Count: 4
         message: 3
 --- !u!114 &4404005846713766739
 MonoBehaviour:
@@ -445,6 +446,9 @@ MonoBehaviour:
       - fieldName: parent
         node: {fileID: 4404005846713766739}
         reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 7940033848906073968}
+        reroutePoints: []
       _direction: 1
       _connectionType: 0
       _typeConstraint: 0
@@ -525,3 +529,45 @@ MonoBehaviour:
         state: 0
         Count: 5
         message: 2
+--- !u!114 &7940033848906073968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -360, y: 136}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 7940033848906073968}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 6349000519055591386}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 11002033102913818
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 11002033102913818
+      type: {class: Log, ns: BT.Actions, asm: Assembly-CSharp}
+      data:
+        state: 0
+        Count: 10
+        message: 5

@@ -60,13 +60,19 @@ namespace BT
             }
         }
 
-        public override void AbortRight(int index)
+        public override void AbortRight(int childIndex)
         {
-            for (int i = index + 1; i < Children.Count; i++)
+            if (childIndex <= currentChild)
             {
-                Children[i].Abort();
+                state = State.Inactive;
+                OnStop();
+                for (var i = childIndex + 1; i < children.Count; i++)
+                {
+                    children[i].Abort();
+                }
+                parent?.AbortRight(indexInParent);
+                currentChild = childIndex;
             }
-            parent?.AbortRight(indexInParent);
         }
 
         internal override void OnObserverBegin()

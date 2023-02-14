@@ -12,7 +12,7 @@ namespace BT
         
         //TODO 拆装箱优化      暂时的思路：考虑一个包含各种类型的类，并在其中实现各种类型的get和set方法
         private Dictionary<string,object> _parameters = new Dictionary<string, object>();
-        private Dictionary<string,List<Action>> _observers = new Dictionary<string, List<Action>>();
+        private Dictionary<string,Action> _observers = new Dictionary<string, Action>();
         public void Init()
         {
             _parameters.Add("CurStage",CurStage);
@@ -53,11 +53,8 @@ namespace BT
         private void NotifyObservers(string key)
         {
             if (_observers.ContainsKey(key))
-            {
-                foreach (var action in _observers[key])
-                {
-                    action();
-                }
+            { 
+                _observers[key]?.Invoke();
             }
         }
 
@@ -65,12 +62,11 @@ namespace BT
         {
             if (_observers.ContainsKey(s))
             {
-                _observers[s].Add(onBlackboardChanged);
+                _observers[s] += onBlackboardChanged;
             }
             else
             {
-                _observers.Add(s,new List<Action>());
-                _observers[s].Add(onBlackboardChanged);
+                _observers.Add(s,onBlackboardChanged);
             }
         }
 
@@ -78,7 +74,7 @@ namespace BT
         {
             if (_observers.ContainsKey(s))
             {
-                _observers[s].Remove(onBlackboardChanged);
+                _observers[s] -= onBlackboardChanged;
             }
         }
     }

@@ -25,8 +25,10 @@ namespace BT
             Child.Abort();
         }
 
-        public override void AbortRight(int index)
+        public override void AbortRight(int childIndex)
         {
+            state = State.Inactive;
+            OnStop();
             parent?.AbortRight(indexInParent);
         }
     }

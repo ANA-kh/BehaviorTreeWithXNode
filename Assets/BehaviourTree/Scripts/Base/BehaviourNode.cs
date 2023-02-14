@@ -64,6 +64,6 @@ namespace BT
         internal virtual void OnObserverEnd() { }
         internal virtual void OnConditionalAbort(int childIndex) { }
 
-        public virtual void AbortRight(int index) { }
+        public virtual void AbortRight(int childIndex) { }
     }
 }
