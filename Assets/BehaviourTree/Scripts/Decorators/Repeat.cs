@@ -1,5 +1,8 @@
-﻿namespace BT.Decorators
+﻿using System;
+
+namespace BT.Decorators
 {
+    [System.Serializable]
     public class Repeat : DecoratorNode
     {
         public int repeatCount = 1;
@@ -14,8 +17,14 @@
         {
             if (currentCount < repeatCount)
             {
-                currentCount++;
-                child.Update();
+
+                switch (child.Update())
+                {
+                    case State.Failure:
+                    case State.Success:
+                        currentCount++;
+                        break;
+                }
                 return State.Running;
             }
             else
