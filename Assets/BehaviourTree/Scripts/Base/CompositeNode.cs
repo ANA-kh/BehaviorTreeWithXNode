@@ -96,6 +96,7 @@ namespace BT
                 Abort();
                 parent?.AbortRight(indexInParent);
             }
+            //TODO Abort会调用OnStop,OnStop中会清理数据,会把currentChild设为0。这里依赖了执行顺寻,后续考虑优化
             currentChild = childIndex;
         }
     }

@@ -3,9 +3,9 @@
     [System.Serializable]
     public class Selector : CompositeNode
     {
-        protected override void OnStart()
+        protected override void OnStop()
         {
-            base.OnStart();
+            base.OnStop();
             currentChild = 0;
         }
 
