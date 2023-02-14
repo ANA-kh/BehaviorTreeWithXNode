@@ -11,10 +11,10 @@ namespace BT.Composites
         
         protected override State OnUpdate()
         {
-            for (int i = currentChild; i < children.Count; ++i)
+            for (int i = currentChild; i < Children.Count; ++i)
             {
                 currentChild = i;
-                var child = children[currentChild];
+                var child = Children[currentChild];
                 
                 switch (child.Update())
                 {

@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace BT
@@ -41,6 +42,11 @@ namespace BT
         private void OnDestroy()
         {
             BTree.TreeState = BehaviourNode.State.Inactive;
+            BTree.RootNode.Abort();
+            
+            //Selection.activeObject
         }
+        
+        
     }
 }

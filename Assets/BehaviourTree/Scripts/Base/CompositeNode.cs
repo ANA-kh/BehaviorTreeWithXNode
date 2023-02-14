@@ -11,7 +11,12 @@ namespace BT
         protected List<BehaviourNode> children = new List<BehaviourNode>();
         
         public AbortType abortType = AbortType.None;
-        protected int currentChild = 0; 
+        protected int currentChild = 0;
+        public List<BehaviourNode> Children
+        {
+            get => children;
+            protected set => children = value;
+        }
 
         protected override void OnStart()
         {
@@ -31,32 +36,42 @@ namespace BT
         
         public void AddChild(BehaviourNode child)
         {
-            children.Add(child);
-            child.SetParent(this, children.Count - 1);
+            Children.Add(child);
+            child.SetParent(this, Children.Count - 1);
         }
         
         public void RemoveChild(BehaviourNode child)
         {
-            children.Remove(child);
+            Children.Remove(child);
         }
         
         public void ClearChildren()
         {
-            children.Clear();
+            Children.Clear();
+        }
+
+        public override void Abort()
+        {
+            state = State.Inactive;
+            OnStop();
+            foreach (var child in Children)
+            {
+                child.Abort();
+            }
         }
 
         public override void AbortRight(int index)
         {
-            for (int i = index + 1; i < children.Count; i++)
+            for (int i = index + 1; i < Children.Count; i++)
             {
-                children[i].Abort();
+                Children[i].Abort();
             }
-            parent.AbortRight(indexInParent);
+            parent?.AbortRight(indexInParent);
         }
 
         internal override void OnObserverBegin()
         {
-            foreach (var child in children)
+            foreach (var child in Children)
             {
                 child.OnObserverBegin();
             }
@@ -64,7 +79,7 @@ namespace BT
 
         internal override void OnObserverEnd()
         {
-            foreach (var child in children)
+            foreach (var child in Children)
             {
                 child.OnObserverEnd();
             }
@@ -72,30 +87,16 @@ namespace BT
         
         internal override void OnConditionalAbort(int childIndex)
         {
-            currentChild = childIndex;
-            state = State.Inactive;
             if (abortType == AbortType.Self)
             {
-                AbortCurrentBranch();
+                Abort();
             }
             else if (abortType == AbortType.LowerPriority)
             {
-                AbortLowerPriorityBranch();
+                Abort();
+                parent?.AbortRight(indexInParent);
             }
-        }
-
-        private void AbortLowerPriorityBranch()
-        {
-            parent.AbortRight(indexInParent);
-            AbortCurrentBranch();
-        }
-
-        private void AbortCurrentBranch()
-        {
-            foreach (var child in children)
-            {
-                child.Abort();
-            }
+            currentChild = childIndex;
         }
     }
     

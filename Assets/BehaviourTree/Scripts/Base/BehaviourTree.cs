@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace BT
@@ -6,11 +7,11 @@ namespace BT
     [System.Serializable]
     public class BehaviourTree 
     {
-        // public BehaviourNode RootNode
-        // {
-        //     get => _rootNode;
-        //     set => _rootNode = value;
-        // }
+        public BehaviourNode RootNode
+        {
+            get => _rootNode;
+            set => _rootNode = value;
+        }
         public GameObject Agent { get; set; } 
         [SerializeField]
         public Blackboard Blackboard = new Blackboard();
@@ -41,6 +42,33 @@ namespace BT
             Agent = agent;
             Blackboard.Init();
             TreeState = BehaviourNode.State.Running;
+            
+            Traverse(_rootNode, node => node.SetTree(this));
+        }
+        
+        
+        public static IEnumerable<BehaviourNode> GetChildren(BehaviourNode parent) {
+            if (parent is DecoratorNode decorator && decorator.Child != null)
+            {
+                yield return decorator.Child;
+            }
+            if (parent is CompositeNode composite)
+            {
+                foreach (var child in composite.Children)
+                {
+                    yield return child;
+                }
+            }
+        }
+
+        public static void Traverse(BehaviourNode node, System.Action<BehaviourNode> visiter) {
+            if (node != null) {
+                visiter.Invoke(node);
+                foreach (var child in GetChildren(node))
+                {
+                    Traverse(child, visiter);
+                }
+            }
         }
     }
 }

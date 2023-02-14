@@ -24,5 +24,10 @@ namespace BT.Actions
             _curCount++;
             return State.Running;
         }
+
+        protected override void OnStop()
+        {
+            _curCount = 0;
+        }
     }
 }

@@ -14,13 +14,20 @@ namespace BT
 
             if (conditionResult)
             {
-                parent.OnConditionalAbort(indexInParent);
+                parent?.OnConditionalAbort(indexInParent);
             }
         }
 
         protected override State OnUpdate()
         {
             return State.Success;
+        }
+
+        public override void Abort()
+        {
+            state = State.Inactive;
+            OnStop();
+            OnObserverEnd();
         }
     }
 }

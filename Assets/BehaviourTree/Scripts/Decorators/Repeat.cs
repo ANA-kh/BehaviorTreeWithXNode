@@ -18,7 +18,7 @@ namespace BT.Decorators
             if (currentCount < repeatCount)
             {
 
-                switch (child.Update())
+                switch (Child.Update())
                 {
                     case State.Failure:
                     case State.Success:
@@ -31,6 +31,11 @@ namespace BT.Decorators
             {
                 return State.Success;
             }
+        }
+
+        protected override void OnStop()
+        {
+            currentCount = 0;
         }
     }
 }

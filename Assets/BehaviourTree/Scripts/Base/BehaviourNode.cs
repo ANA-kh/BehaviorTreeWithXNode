@@ -34,21 +34,26 @@ namespace BT
             return state;
         }
         
-        public void Abort()
-        {
-            OnAbort();
-        }
+        // public void Abort()
+        // {
+        //     OnAbort();
+        // }
         public void SetParent(BehaviourNode parent, int indexInParent)
         {
             this.parent = parent;
             this.indexInParent = indexInParent;
         }
         
+        public void SetTree(BehaviourTree tree)
+        {
+            this.tree = tree;
+        }
+        
         protected virtual void OnStart() { }
         protected virtual void OnStop() { }
         protected virtual State OnUpdate() { return State.Running; }
 
-        protected virtual void OnAbort()
+        public virtual void Abort()
         {
             state = State.Inactive;
             OnStop();
