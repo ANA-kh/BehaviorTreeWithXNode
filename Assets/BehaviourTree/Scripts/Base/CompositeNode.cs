@@ -51,6 +51,7 @@ namespace BT
             {
                 children[i].Abort();
             }
+            parent.AbortRight(indexInParent);
         }
 
         internal override void OnObserverBegin()
