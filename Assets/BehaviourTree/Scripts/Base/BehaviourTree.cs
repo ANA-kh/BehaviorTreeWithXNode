@@ -35,5 +35,12 @@ namespace BT
         {
             _rootNode = root;
         }
+
+        public void Init(GameObject agent)
+        {
+            Agent = agent;
+            Blackboard.Init();
+            TreeState = BehaviourNode.State.Running;
+        }
     }
 }

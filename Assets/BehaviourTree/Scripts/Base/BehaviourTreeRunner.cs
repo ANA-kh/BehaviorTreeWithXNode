@@ -22,8 +22,7 @@ namespace BT
             _treeGraphOnRuntime = (BehaviourTreeGraph)TreeGraph.Copy();
             //_treeGraphOnRuntime = ScriptableObject.CreateInstance<BehaviourTreeGraph>();
             BTree = _treeGraphOnRuntime.Build();
-            BTree.Agent = gameObject;
-            BTree.TreeState = BehaviourNode.State.Running;
+            BTree.Init(gameObject);
         }
 
         private void Update()
