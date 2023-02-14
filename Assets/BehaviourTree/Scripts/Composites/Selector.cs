@@ -3,17 +3,12 @@
     [System.Serializable]
     public class Selector : CompositeNode
     {
-        protected int currentChild = 0;
-        
         protected override void OnStart()
         {
+            base.OnStart();
             currentChild = 0;
         }
-        
-        protected override void OnStop()
-        {
-        }
-        
+
         protected override State OnUpdate()
         {
             for (int i = currentChild; i < children.Count; ++i)

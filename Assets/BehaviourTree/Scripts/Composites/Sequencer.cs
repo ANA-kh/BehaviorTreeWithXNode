@@ -3,15 +3,10 @@ namespace BT.Composites
     [System.Serializable]
     public class Sequencer : CompositeNode
     {
-        protected int currentChild = 0;
-        
         protected override void OnStart()
         {
+            base.OnStart();
             currentChild = 0;
-        }
-        
-        protected override void OnStop()
-        {
         }
         
         protected override State OnUpdate()
