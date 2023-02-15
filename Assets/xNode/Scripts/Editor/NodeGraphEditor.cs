@@ -152,6 +152,11 @@ namespace XNodeEditor {
             return NodeEditorPreferences.GetSettings().noodleStroke;
         }
 
+        public virtual NoodleDirect GetNoodleDirect(XNode.NodePort output, XNode.NodePort input)
+        {
+            return NoodleDirect.Horizontal;
+        }
+
         /// <summary> Returned color is used to color ports </summary>
         public virtual Color GetPortColor(XNode.NodePort port) {
             return GetTypeColor(port.ValueType);

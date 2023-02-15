@@ -203,6 +203,18 @@ namespace XNode {
             else return port;
         }
 
+        public NodePort GetOutputPort()
+        {
+            foreach (var port in ports)
+            {
+                if (port.Value.direction == NodePort.IO.Output)
+                {
+                    return port.Value;
+                }
+            }
+            return null;
+        }
+
         /// <summary> Returns input port which matches fieldName </summary>
         public NodePort GetInputPort(string fieldName) {
             NodePort port = GetPort(fieldName);

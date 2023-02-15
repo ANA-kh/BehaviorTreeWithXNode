@@ -241,34 +241,42 @@ namespace XNodeEditor {
                         if (i == length - 1) continue; // Skip last index
                         //最小横向距离,再近会形成更多折线
                         var mixDis = 30;//原来是50
-                        if (gridPoints[i].x <= gridPoints[i + 1].x - (mixDis / zoom)) {
-                            float midpoint = (gridPoints[i].x + gridPoints[i + 1].x) * 0.5f;
+
+                        if (gridPoints[i].y <= gridPoints[i + 1].y - (mixDis / zoom))
+                        {
+                            float midpoint = (gridPoints[i].y + gridPoints[i + 1].y) * 0.5f;
                             Vector2 start_1 = gridPoints[i];
                             Vector2 end_1 = gridPoints[i + 1];
-                            start_1.x = midpoint;
-                            end_1.x = midpoint;
-                            if (i == length - 2) {
+                            start_1.y = midpoint;
+                            end_1.y = midpoint;
+                            if (i == length - 2)
+                            {
                                 DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
                                 Handles.color = gradient.Evaluate(0.5f);
                                 DrawAAPolyLineNonAlloc(thickness, start_1, end_1);
                                 Handles.color = gradient.Evaluate(1f);
                                 DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
-                            } else {
-                                DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
-                                DrawAAPolyLineNonAlloc(thickness, start_1, end_1);
-                                DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
                             }
-                        } else {
-                            float midpoint = (gridPoints[i].y + gridPoints[i + 1].y) * 0.5f;
+                            else
+                            {
+                                DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                                Handles.color = gradient.Evaluate(0.5f);
+                                DrawAAPolyLineNonAlloc(thickness, start_1, end_1);
+                            }
+                        }
+                        else
+                        {
+                            float midpoint = (gridPoints[i].x + gridPoints[i + 1].x) * 0.5f;
                             Vector2 start_1 = gridPoints[i];
                             Vector2 end_1 = gridPoints[i + 1];
-                            start_1.x += 25 / zoom;
-                            end_1.x -= 25 / zoom;
+                            start_1.y += 25 / zoom;
+                            end_1.y -= 25 / zoom;
                             Vector2 start_2 = start_1;
                             Vector2 end_2 = end_1;
-                            start_2.y = midpoint;
-                            end_2.y = midpoint;
-                            if (i == length - 2) {
+                            start_2.x = midpoint;
+                            end_2.x = midpoint;
+                            if (i == length - 2)
+                            {
                                 DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
                                 Handles.color = gradient.Evaluate(0.25f);
                                 DrawAAPolyLineNonAlloc(thickness, start_1, start_2);
@@ -278,14 +286,65 @@ namespace XNodeEditor {
                                 DrawAAPolyLineNonAlloc(thickness, end_2, end_1);
                                 Handles.color = gradient.Evaluate(1f);
                                 DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
-                            } else {
+                            }
+                            else
+                            {
                                 DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                                Handles.color = gradient.Evaluate(0.25f);
                                 DrawAAPolyLineNonAlloc(thickness, start_1, start_2);
+                                Handles.color = gradient.Evaluate(0.5f);
                                 DrawAAPolyLineNonAlloc(thickness, start_2, end_2);
+                                Handles.color = gradient.Evaluate(0.75f);
                                 DrawAAPolyLineNonAlloc(thickness, end_2, end_1);
-                                DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
                             }
                         }
+                        # region 左右
+                        // if (gridPoints[i].x <= gridPoints[i + 1].x - (mixDis / zoom)) {
+                        //     float midpoint = (gridPoints[i].x + gridPoints[i + 1].x) * 0.5f;
+                        //     Vector2 start_1 = gridPoints[i];
+                        //     Vector2 end_1 = gridPoints[i + 1];
+                        //     start_1.x = midpoint;
+                        //     end_1.x = midpoint;
+                        //     if (i == length - 2) {
+                        //         DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                        //         Handles.color = gradient.Evaluate(0.5f);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_1, end_1);
+                        //         Handles.color = gradient.Evaluate(1f);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
+                        //     } else {
+                        //         DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_1, end_1);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
+                        //     }
+                        // } else {
+                        //     float midpoint = (gridPoints[i].y + gridPoints[i + 1].y) * 0.5f;
+                        //     Vector2 start_1 = gridPoints[i];
+                        //     Vector2 end_1 = gridPoints[i + 1];
+                        //     start_1.x += 25 / zoom;
+                        //     end_1.x -= 25 / zoom;
+                        //     Vector2 start_2 = start_1;
+                        //     Vector2 end_2 = end_1;
+                        //     start_2.y = midpoint;
+                        //     end_2.y = midpoint;
+                        //     if (i == length - 2) {
+                        //         DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                        //         Handles.color = gradient.Evaluate(0.25f);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_1, start_2);
+                        //         Handles.color = gradient.Evaluate(0.5f);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_2, end_2);
+                        //         Handles.color = gradient.Evaluate(0.75f);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_2, end_1);
+                        //         Handles.color = gradient.Evaluate(1f);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
+                        //     } else {
+                        //         DrawAAPolyLineNonAlloc(thickness, gridPoints[i], start_1);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_1, start_2);
+                        //         DrawAAPolyLineNonAlloc(thickness, start_2, end_2);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_2, end_1);
+                        //         DrawAAPolyLineNonAlloc(thickness, end_1, gridPoints[i + 1]);
+                        //     }
+                        // }
+                        # endregion
                     }
                     break;
                 case NoodlePath.ShaderLab:

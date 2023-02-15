@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 
 namespace XNodeEditor {
     public enum NoodlePath { Curvy, Straight, Angled, ShaderLab }
+    public enum NoodleDirect { Horizontal, Vertical}
     public enum NoodleStroke { Full, Dashed }
 
     public static class NodeEditorPreferences {

@@ -264,6 +264,40 @@ namespace XNodeEditor {
             NodeEditor.portPositions[port] = portPos;
         }
 
+        /// <summary> Add a port field to previous layout element. </summary>
+        public static void AddPortFieldCenter(XNode.NodePort port) {
+            if (port == null) return;
+            Rect rect = new Rect();
+
+            // If property is an input, display a regular property field and put a port handle on the left side
+            if (port.direction == XNode.NodePort.IO.Input) {
+                rect = GUILayoutUtility.GetLastRect();
+                float paddingLeft = NodeEditorWindow.current.graphEditor.GetPortStyle(port).padding.left;
+                //rect.position = rect.position  - new Vector2(16 + paddingLeft, 0);
+                //rect.position = rect.position + new Vector2(rect.width / 2,0);
+                rect.position = rect.position + new Vector2(rect.width/2 -8, -4);
+                // If property is an output, display a text label and put a port handle on the right side
+            } else if (port.direction == XNode.NodePort.IO.Output) {
+                rect = GUILayoutUtility.GetLastRect();
+                rect.width += NodeEditorWindow.current.graphEditor.GetPortStyle(port).padding.right;
+                //rect.position = rect.position + new Vector2(rect.width, 0);
+                //rect.position = rect.position + new Vector2(rect.width / 2,rect.height);
+                rect.position = rect.position + new Vector2(rect.width / 2 - 8, rect.height);
+            }
+
+            rect.size = new Vector2(16, 16);
+
+            Color backgroundColor = NodeEditorWindow.current.graphEditor.GetPortBackgroundColor(port);
+            Color col = NodeEditorWindow.current.graphEditor.GetPortColor(port);
+            GUIStyle portStyle = NodeEditorWindow.current.graphEditor.GetPortStyle(port);
+
+            DrawPortHandle(rect, backgroundColor, col, portStyle.normal.background, portStyle.active.background);
+
+            // Register the handle position
+            Vector2 portPos = rect.center;
+            NodeEditor.portPositions[port] = portPos;
+        }
+
         /// <summary> Draws an input and an output port on the same line </summary>
         public static void PortPair(XNode.NodePort input, XNode.NodePort output) {
             GUILayout.BeginHorizontal();
