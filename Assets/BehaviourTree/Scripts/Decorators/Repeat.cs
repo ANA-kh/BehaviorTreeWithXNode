@@ -5,24 +5,24 @@ namespace BT.Decorators
     [System.Serializable]
     public class Repeat : DecoratorNode
     {
-        public int repeatCount = 1;
-        private int currentCount = 0;
+        public bool RepeatForever = false;
+        public int RepeatCount = 1;
+        private int _currentCount = 0;
 
         protected override void OnStart()
         {
-            currentCount = 0;
+            _currentCount = 0;
         }
 
         protected override State OnUpdate()
         {
-            if (currentCount < repeatCount)
+            if (RepeatForever || _currentCount < RepeatCount)
             {
-
                 switch (Child.Update())
                 {
                     case State.Failure:
                     case State.Success:
-                        currentCount++;
+                        _currentCount++;
                         break;
                 }
                 return State.Running;
@@ -35,7 +35,7 @@ namespace BT.Decorators
 
         protected override void OnStop()
         {
-            currentCount = 0;
+            _currentCount = 0;
         }
     }
 }
