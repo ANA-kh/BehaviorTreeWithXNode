@@ -240,11 +240,11 @@ namespace XNodeEditor {
                     for (int i = 0; i < length - 1; i++) {
                         if (i == length - 1) continue; // Skip last index
                         //最小横向距离,再近会形成更多折线
-                        var mixDis = 30;//原来是50
+                        var minDis = 30;//原来是50
 
-                        if (gridPoints[i].y <= gridPoints[i + 1].y - (mixDis / zoom))
+                        if (gridPoints[i].y <= gridPoints[i + 1].y - (minDis / zoom))
                         {
-                            float midpoint = (gridPoints[i].y + gridPoints[i + 1].y) * 0.5f;
+                            float midpoint = gridPoints[i].y + minDis/ (2 * zoom);//(gridPoints[i].y + gridPoints[i + 1].y) * 0.5f;
                             Vector2 start_1 = gridPoints[i];
                             Vector2 end_1 = gridPoints[i + 1];
                             start_1.y = midpoint;
