@@ -17,16 +17,7 @@ namespace BT
         {
             _parameters.Add("CurStage",CurStage);
         }
-        
-        public object Get(string key)
-        {
-            if (_parameters.ContainsKey(key))
-            {
-                return _parameters[key];
-            }
-            return null;
-        }
-        
+
         public T Get<T>(string key)
         {
             if (_parameters.ContainsKey(key))
@@ -36,6 +27,17 @@ namespace BT
             return default;
         }
         
+        public bool TryGet<T>(string key,out T value)
+        {
+            if (_parameters.ContainsKey(key))
+            {
+                value = (T)_parameters[key];
+                return true;
+            }
+            value = default;
+            return false;
+        }
+        
         public void Set(string key,object value)
         {
             if (_parameters.ContainsKey(key))
@@ -43,11 +45,11 @@ namespace BT
                 _parameters[key] = value;
                 NotifyObservers(key);
             }
-            // else
-            // {
-            //     _parameters.Add(key,value);
-            //     NotifyObservers(key);
-            // }
+            else
+            {
+                _parameters.Add(key,value);
+                NotifyObservers(key);
+            }
         }
 
         private void NotifyObservers(string key)

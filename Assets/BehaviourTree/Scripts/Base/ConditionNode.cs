@@ -20,7 +20,7 @@ namespace BT
 
         protected override State OnUpdate()
         {
-            return State.Success;
+            return Condition()? State.Success : State.Failure;
         }
 
         public override void Abort()

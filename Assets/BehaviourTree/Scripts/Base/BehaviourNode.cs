@@ -14,6 +14,10 @@ namespace BT
         {
             get { return tree.Blackboard; }
         }
+        protected GameObject Agent
+        {
+            get { return tree.Agent; }
+        }
         public enum State
         {
             Inactive,
