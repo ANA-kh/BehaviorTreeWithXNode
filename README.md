@@ -32,6 +32,13 @@
 ### 上下文和黑板
 用以存储多个树节点需要用到的变量，让节点之间可以间接交流。
 
+### 使用委托实现ConditionAbort
+AbortType:
+- Self:ConditionNode可中断自己所在分支的所有节点
+- LowerPriority:ConditionNode可中断父亲的右侧（低优先级）所有分支节点
+- Both：Self + LowerPriority
+- None：不可中断
+
 
 ## 可视化编辑
 基于XNode实现可视化编辑    (不能可视化编辑的行为树就是答辩。   如果你也用代码构建过复杂树就一定会明白我的心情。。。)
