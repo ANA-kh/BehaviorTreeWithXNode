@@ -9,7 +9,7 @@ using Node = XNode.Node;
 public abstract class BehaviourTreeGraphNode : Node 
 {
 
-	[Input] public BehaviourTreeGraphPort parent;
+	[Input(connectionType = ConnectionType.Override)] public BehaviourTreeGraphPort parent;
 	[SerializeReference]
 	[NotShowInGraphNode]
 	protected BT.BehaviourNode treeNode;

@@ -12,6 +12,8 @@ public class BehaviourTreeGraphNodeEditor : NodeEditor
     private Color rootColor = new Color(0.42f, 0.18f, 0.18f);
     private Color unUseColor = new Color(0.5f, 0.5f, 0.5f);
     private Color runningColor = new Color(0.5f, 0.5f, 0.18f);
+    private Color _color;
+
     public override void OnHeaderGUI()
     {
         var style = NodeEditorResources.styles.nodeHeader;
@@ -75,12 +77,28 @@ public class BehaviourTreeGraphNodeEditor : NodeEditor
     {
         if (Application.isPlaying == false) return GetCostumeTint();
 
-        var node = target as BehaviourTreeGraphNode;
-        if (node && node.TreeNode.state == BehaviourNode.State.Running)return runningColor;
         
-        return GetCostumeTint();
+        var node = target as BehaviourTreeGraphNode;
+        if (node && node.TreeNode.state == BehaviourNode.State.Running)
+        {
+            return _color = runningColor;
+        }
+        
+        var toColor = GetCostumeTint();
+        
+        _color = LerpColor(_color, toColor, Time.deltaTime);
+        return _color;
     }
-    
+
+    private Color LerpColor(Color color1, Color color2, float f)
+    {
+        return new Color(
+            Mathf.Lerp(color1.r, color2.r, f),
+            Mathf.Lerp(color1.g, color2.g, f),
+            Mathf.Lerp(color1.b, color2.b, f),
+            Mathf.Lerp(color1.a, color2.a, f));
+    }
+
     private Color GetCostumeTint()
     {
         var node = target as BehaviourTreeGraphNode;
