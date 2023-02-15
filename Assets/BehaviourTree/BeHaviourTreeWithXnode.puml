@@ -1,0 +1,109 @@
+@startuml
+'https://plantuml.com/class-diagram
+package "TREE" <<Rectangle>> #DDDDDD
+{
+class BehaviourTree
+{
+    +Blackboard blackboard
+    #BehaviourNode Root
+}
+class Blackboard
+{
+    #Dictionary<string, object> data
+    #T Get<T>(string key)
+    #void Set(string key, object value)
+    #NotifyObservers()
+    +AddObserver()
+    +RemoveObserver()
+}
+abstract class BehaviourNode
+{
+    +Init()
+    +Abort()
+    +Update()
+    #OnStart()
+    #OnUpdate()
+    #OnStop()
+}
+enum AbortType
+{
+    Self
+    LowerPriority
+    Both
+}
+abstract class CompositeNode
+{
+    #BehaviourNode[] Children
+    -AbortType abortType
+}
+abstract class DecoratorNode
+{
+    BehaviourNode Child
+}
+abstract class ConditionNode
+{
+    #Condition()
+}
+abstract class ActionNode
+class Selector
+class Sequence
+class Repeat
+class Log
+class IntComparison
+
+BehaviourNode <|-- CompositeNode
+BehaviourNode <|-- DecoratorNode
+BehaviourNode <|-- ConditionNode
+BehaviourNode <|-- ActionNode
+CompositeNode <|-- Selector
+CompositeNode <|-- Sequence
+DecoratorNode <|-- Repeat
+ConditionNode <|-- IntComparison
+ActionNode <|-- Log
+
+BehaviourTree *--"1" Blackboard
+BehaviourTree *--"1" BehaviourNode
+CompositeNode o--"n" BehaviourNode
+DecoratorNode o--"1" BehaviourNode
+}
+
+class BehaviourTreeRunner
+{
+    +BehaviourTreeGraph TreeGraph
+    -BehaviourTree tree
+    +Update()
+    -BuildRunTimeTree()
+}
+
+package "可视化编辑部分,XNode" <<Rectangle>> #DDDDDD
+{
+class BehaviourTreeGraph
+abstract class BehaviourTreeGraphNode
+class CompositeGraphNode
+class DecoratorGraphNode
+class ConditionGraphNode
+class ActionGraphNode
+class BehaviourTreeGraphPort
+package XNode(提供序列化) <<Rectangle>> #DDDDDD
+{
+class Node
+class NodeGraph
+class ScriptableObject
+}
+
+BehaviourTreeRunner *--"1" BehaviourTreeGraph
+BehaviourTreeRunner *-left-"1" BehaviourTree
+
+BehaviourTreeGraph o-right- BehaviourTreeGraphNode
+BehaviourTreeGraphNode <|-- CompositeGraphNode
+BehaviourTreeGraphNode <|-- DecoratorGraphNode
+BehaviourTreeGraphNode <|-- ConditionGraphNode
+BehaviourTreeGraphNode <|-- ActionGraphNode
+ScriptableObject <|-- Node
+ScriptableObject <|-- NodeGraph
+Node <|-- BehaviourTreeGraphNode
+NodeGraph <|-- BehaviourTreeGraph
+BehaviourTreeGraphNode o-right- BehaviourTreeGraphPort
+}
+
+@enduml

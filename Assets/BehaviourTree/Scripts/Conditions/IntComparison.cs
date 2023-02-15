@@ -19,7 +19,7 @@ namespace BT
         public int Value;
         public ComparisonType Type;
 
-        public override bool Condition()
+        protected override bool Condition()
         {
             var value = Blackboard.Get<int>(Key);
             switch (Type)

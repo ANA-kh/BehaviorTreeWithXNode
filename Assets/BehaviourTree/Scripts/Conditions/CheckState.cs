@@ -4,7 +4,8 @@ namespace BT
     public class CheckState : ConditionNode
     {
         public int CurStage;
-        public override bool Condition()
+
+        protected override bool Condition()
         {
             var state = Blackboard.Get<int>("CurStage");
             return state == CurStage;

@@ -6,7 +6,7 @@ namespace BT
     public abstract class ConditionNode : BehaviourNode
     {
         public bool IsObserving { get; protected set; } = false;
-        public abstract bool Condition(); 
+        protected abstract bool Condition(); 
 
         protected void Evaluate()
         {

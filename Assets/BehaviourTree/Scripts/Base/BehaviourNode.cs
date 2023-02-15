@@ -4,12 +4,12 @@ using UnityEngine;
 namespace BT
 {
     [System.Serializable]
-    public class BehaviourNode
+    public abstract class BehaviourNode
     {
         private BehaviourTree tree;
         protected int indexInParent;
         protected BehaviourNode parent;
-        
+
         protected Blackboard Blackboard
         {
             get { return tree.Blackboard; }
@@ -18,6 +18,7 @@ namespace BT
         {
             get { return tree.Agent; }
         }
+
         public enum State
         {
             Inactive,
@@ -25,7 +26,7 @@ namespace BT
             Failure,
             Success
         }
-        
+
         [HideInInspector]
         public State state = State.Inactive;
 
@@ -34,32 +35,14 @@ namespace BT
             if (state != State.Running)
             {
                 OnStart();
-                return  state = State.Running;
+                return state = State.Running;
             }
+
             state = OnUpdate();
             if (state != State.Running) OnStop();
-            
+
             return state;
         }
-        
-        // public void Abort()
-        // {
-        //     OnAbort();
-        // }
-        public void SetParent(BehaviourNode parent, int indexInParent)
-        {
-            this.parent = parent;
-            this.indexInParent = indexInParent;
-        }
-        
-        public virtual void Init(BehaviourTree tree)
-        {
-            this.tree = tree;
-        }
-        
-        protected virtual void OnStart() { }
-        protected virtual void OnStop() { }
-        protected virtual State OnUpdate() { return State.Running; }
 
         public virtual void Abort()
         {
@@ -67,8 +50,27 @@ namespace BT
             OnStop();
         }
 
+        public void SetParent(BehaviourNode parent, int indexInParent)
+        {
+            this.parent = parent;
+            this.indexInParent = indexInParent;
+        }
+
+        public virtual void Init(BehaviourTree tree)
+        {
+            this.tree = tree;
+        }
+
+        protected virtual void OnStart() { }
+        protected virtual void OnStop() { }
+
+        protected virtual State OnUpdate()
+        {
+            return State.Running;
+        }
+
         internal virtual void OnObserverBegin() { }
-        
+
         internal virtual void OnObserverEnd() { }
         internal virtual void OnConditionalAbort(int childIndex) { }
 

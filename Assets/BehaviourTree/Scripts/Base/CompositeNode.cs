@@ -10,7 +10,8 @@ namespace BT
         [SerializeReference]
         protected List<BehaviourNode> children = new List<BehaviourNode>();
         
-        public AbortType abortType = AbortType.None;
+        [SerializeField]
+        private AbortType abortType = AbortType.None;
         protected int currentChild = 0;
         public List<BehaviourNode> Children
         {

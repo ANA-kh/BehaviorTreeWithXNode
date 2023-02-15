@@ -20,17 +20,16 @@ namespace BT
 
         private void OnEnable()
         {
-            //_treeGraphOnRuntime = Instantiate(TreeGraph);   wrong
+            BuildRunTimeTree();
+        }
+
+        private void BuildRunTimeTree()
+        {
             _treeGraphOnRuntime = (BehaviourTreeGraph)TreeGraph.Copy();
-            //_treeGraphOnRuntime = ScriptableObject.CreateInstance<BehaviourTreeGraph>();
             BTree = _treeGraphOnRuntime.Build();
             BTree.Init(gameObject);
-
-
-            
-
         }
-        
+
 #if UNITY_EDITOR
         private void Start()
         {
@@ -52,14 +51,6 @@ namespace BT
                     BTree.Update();
                 }
             }
-        }
-
-        private void OnDestroy()
-        {
-            BTree.TreeState = BehaviourNode.State.Inactive;
-            BTree.RootNode.Abort();
-
-            //Selection.activeObject
         }
 
 #if UNITY_EDITOR
