@@ -14,7 +14,24 @@ public class BehaviourTreeGraphNodeEditor : NodeEditor
     private Color runningColor = new Color(0.5f, 0.5f, 0.18f);
     public override void OnHeaderGUI()
     {
-        GUILayout.Label((target as BehaviourTreeGraphNode).Title, NodeEditorResources.styles.nodeHeader, GUILayout.Height(30));
+        var style = NodeEditorResources.styles.nodeHeader;
+        var title = (target as BehaviourTreeGraphNode).Title;
+        var size = GetTitleFontSize(title);
+        style.fontSize = size;
+
+        GUILayout.Label(title, style, GUILayout.Height(30));
+        NodeEditorGUILayout.AddPortFieldCenter(target.GetInputPort("parent"));
+    }
+
+    private int GetTitleFontSize(string title)
+    {
+        var size = 12;
+        if (title.Length > 10)
+        {
+            size -= (title.Length - 10) / 4;
+        }
+
+        return size;
     }
 
     public override void OnBodyGUI()
@@ -23,30 +40,33 @@ public class BehaviourTreeGraphNodeEditor : NodeEditor
         // serializedObject.Update(); must go at the start of an inspector gui, and
         // serializedObject.ApplyModifiedProperties(); goes at the end.
         serializedObject.Update();
-        string[] excludes = { "m_Script", "graph", "position", "ports" ,};
+        //string[] excludes = { "m_Script", "graph", "position", "ports" ,};
 	   
 		  
         //Iterate through serialized properties and draw them like the Inspector (But with ports)
-        SerializedProperty iterator = serializedObject.GetIterator();
-        bool enterChildren = true;
-        while (iterator.NextVisible(enterChildren)) {
-            enterChildren = false;
-            if (excludes.Contains(iterator.name)) continue;
-            var attribute = iterator.GetFieldInfo().GetCustomAttribute(typeof(BehaviourTreeGraphNode.NotShowInGraphNodeAttribute),false);
-            if (attribute != null)
-            {
-                continue;
-            }
-            NodeEditorGUILayout.PropertyField(iterator, true);
-        }
+        // SerializedProperty iterator = serializedObject.GetIterator();
+        // bool enterChildren = true;
+        // while (iterator.NextVisible(enterChildren)) {
+        //     enterChildren = false;
+        //     if (excludes.Contains(iterator.name)) continue;
+        //     var attribute = iterator.GetFieldInfo().GetCustomAttribute(typeof(BehaviourTreeGraphNode.NotShowInGraphNodeAttribute),false);
+        //     if (attribute != null)
+        //     {
+        //         continue;
+        //     }
+        //     NodeEditorGUILayout.PropertyField(iterator, true);
+        // }
     
     
         // Iterate through dynamic ports and draw them in the order in which they are serialized
         // Iterate through
-        foreach (XNode.NodePort dynamicPort in target.DynamicPorts) {
-            if (NodeEditorGUILayout.IsDynamicPortListPort(dynamicPort)) continue;
-            NodeEditorGUILayout.PortField(dynamicPort);
-        }
+        // foreach (XNode.NodePort dynamicPort in target.DynamicPorts) {
+        //     if (NodeEditorGUILayout.IsDynamicPortListPort(dynamicPort)) continue;
+        //     NodeEditorGUILayout.PortField(dynamicPort);
+        // }
+        
+        GUILayout.Label("",GUILayout.Height(20));
+        NodeEditorGUILayout.AddPortFieldCenter(target.GetOutputPort());
     
         serializedObject.ApplyModifiedProperties();
     }

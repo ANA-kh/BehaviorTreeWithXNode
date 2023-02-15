@@ -85,6 +85,11 @@ namespace SimpleTest
             return NoodlePath.Angled;
         }
 
+        public override NoodleDirect GetNoodleDirect(NodePort output, NodePort input)
+        {
+            return NoodleDirect.Vertical;
+        }
+
         public override Gradient GetNoodleGradient(NodePort output, NodePort input)
         {
             if (input == null)return base.GetNoodleGradient(output, input);
