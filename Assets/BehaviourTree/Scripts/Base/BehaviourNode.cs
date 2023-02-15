@@ -31,7 +31,11 @@ namespace BT
 
         public State Update()
         {
-            if (state != State.Running) OnStart();
+            if (state != State.Running)
+            {
+                OnStart();
+                return  state = State.Running;
+            }
             state = OnUpdate();
             if (state != State.Running) OnStop();
             
