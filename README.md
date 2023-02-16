@@ -13,7 +13,7 @@
 与状态机相比，节点不需要维护向其他节点的转换，由父节点类型决定控制逻辑。
 
 ### 组合节点（Composites）
-组合节点可以拥有一个或多个子节点的节点，并按照特定规则访问子节点。
+组合节点可以拥有一个或多个子节点，并按照特定规则访问子节点。
 #### 序列节点
 遍历子节点。若任意一个子节点返回失败，则立即返回失败；或所有子节点返回成功，则返回成功。
 #### 选择节点
@@ -55,7 +55,9 @@ AbortType:
 3. 给要控制的GameObject添加BehaviourRunner组件，并指定BehaviourTreeGraph
 
 ### 扩展
-继承Composite、Decorator、Condition、Action节点，实现自己的节点即可。 自定义节点会被收集到对应的菜单里。
+继承CompositeNode、DecoratorNode、ConditionNode、ActionNode节点，实现自己的节点即可。 自定义节点会被收集到对应的菜单里。
+
+注意是ActionNode，不是ActionGraphNode。ActionGraphNode是用来绘制和可视化编辑的，如果想自定义节点样式才需要继承ActionGraphNode。
 
 ### 序列化
 XNode节点继承自ScriptableObject，可以直接序列化到Asset中。

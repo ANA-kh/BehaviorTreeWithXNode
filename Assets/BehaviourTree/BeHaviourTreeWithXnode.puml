@@ -27,6 +27,7 @@ abstract class BehaviourNode
 }
 enum AbortType
 {
+    None
     Self
     LowerPriority
     Both
@@ -65,6 +66,7 @@ BehaviourTree *--"1" Blackboard
 BehaviourTree *--"1" BehaviourNode
 CompositeNode o--"n" BehaviourNode
 DecoratorNode o--"1" BehaviourNode
+Blackboard <.right. BehaviourNode
 }
 
 class BehaviourTreeRunner
