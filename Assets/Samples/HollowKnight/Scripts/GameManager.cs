@@ -15,7 +15,7 @@ namespace Core
 
         public void FreezeTime(float duration)
         {
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0.2f;
             StartCoroutine(UnfreezeTime(duration));
         }
         
