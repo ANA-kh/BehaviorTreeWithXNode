@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1652944193298036839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -51.90788, y: 912.6244}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -1652944193298036839}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -1652944193298036839}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: -2
+  IsRoot: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10902e15a0d59194483c15c5cffed7a5, type: 3}
+  m_Name: New Behaviour Tree Graph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -1652944193298036839}
+  BehaviourTree:
+    Blackboard:
+      CurStage: 0
+    TreeState: 0
+  root: {fileID: -1652944193298036839}

@@ -1,0 +1,2546 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8697337295151487227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -792, y: 328}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -8697337295151487227}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: 5033844568429044360}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -7543670624190036485}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -8697337295151487227}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -57902848002102305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818608
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818608
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 1
+--- !u!114 &-8490640053106295013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1048, y: 120}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -8490640053106295013}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -2268898296258042245}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818597
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818597
+      type: {class: Jump, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        horizontalForce: 5
+        jumpForce: 10
+        buildupTime: 0
+        jumpTime: 0.8
+        animationTriggerName: Jump
+        shakeCameraOnLanding: 1
+--- !u!114 &-8453189723317630308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -136, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -8453189723317630308}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 2428324258349165583}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818647
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818647
+      type: {class: SpawnFallingRocks, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        spawnAreaCollider: {fileID: 0}
+        rockPrefab: {fileID: 7870441638020242605, guid: 7ff0bd98bfedb60448318e4d1b096c74, type: 3}
+        spawnCount: 4
+        spawnInterval: 0.3
+--- !u!114 &-8177876525602253383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1064, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -8177876525602253383}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818613
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818613
+      type: {class: Jump, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        horizontalForce: -4
+        jumpForce: 10
+        buildupTime: 0
+        jumpTime: 0.75
+        animationTriggerName: Roll
+        shakeCameraOnLanding: 0
+--- !u!114 &-7543670624190036485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6482285df0e443ea8b5dcdb72e78f989, type: 3}
+  m_Name: Condition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1016, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -7543670624190036485}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -8697337295151487227}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818609
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818609
+      type: {class: IsHealthUnder, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        Key: Health
+        HealthThreshold: 8
+--- !u!114 &-7523882458168962634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -264, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -7523882458168962634}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 2428324258349165583}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818646
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818646
+      type: {class: Jump, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        horizontalForce: 6
+        jumpForce: 20
+        buildupTime: 0
+        jumpTime: 1.3
+        animationTriggerName: JumpAttack
+        shakeCameraOnLanding: 1
+--- !u!114 &-7299318574935723914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 776, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -7299318574935723914}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818643
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818643
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 2
+--- !u!114 &-6864124985873339300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -680, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -6864124985873339300}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818616
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818616
+      type: {class: TriggerAnime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        TriggerName: Recover
+--- !u!114 &-6179962118006083865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -552, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -6179962118006083865}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818618
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818618
+      type: {class: SetHealth, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        Health: 40
+--- !u!114 &-6178654978077703146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 456, y: 984}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -6178654978077703146}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -4185325919273889781}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -2918146963378797426}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 841354623603512932}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -6178654978077703146}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: child
+        node: {fileID: -2743081324974481473}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818630
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818630
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &-5834686683162893863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 168, y: 536}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -5834686683162893863}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -7299318574935723914}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 3385773720578618292}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 6408473152539024317}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 4238420702307625595}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 7527655648295167893}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -5285885527969133321}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 7955134346715590442}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -2453174126500876142}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -5834686683162893863}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -3322006419623565261}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818635
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818635
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &-5657163319683861027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -920, y: 120}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -5657163319683861027}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -2268898296258042245}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818598
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818598
+      type: {class: InitBoss, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        BossName: Fake Knight
+--- !u!114 &-5285885527969133321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 120, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -5285885527969133321}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818638
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818638
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 1.2
+--- !u!114 &-4185325919273889781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 296, y: 1080}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -4185325919273889781}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -6178654978077703146}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818631
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818631
+      type: {class: TriggerAnime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        TriggerName: Attack
+--- !u!114 &-3457184107601454774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -808, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -3457184107601454774}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818615
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818615
+      type: {class: SpawnMaggot, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        MaggotPrefab: {fileID: 1349842340788364316, guid: d1bf7b36100806e419470e7186f11bbb, type: 3}
+        MaggotTransform: {fileID: 0}
+        HazardCollider: {fileID: 0}
+--- !u!114 &-3322006419623565261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -40, y: 424}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -3322006419623565261}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 2428324258349165583}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 1242113025204971672}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 6475727105332335718}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -3322006419623565261}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: child
+        node: {fileID: 3093484323178955130}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818621
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818621
+      type: {class: StageBasedSelector, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+        IncludedTasksPerStage:
+        - 0,1
+        - 2
+        - 3
+        seed: 1
+        useSeed: 1
+--- !u!114 &-3118000897433790946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -552, y: 664}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -3118000897433790946}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 1242113025204971672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818623
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818623
+      type: {class: Jump, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        horizontalForce: 3
+        jumpForce: 20
+        buildupTime: 0.5
+        jumpTime: 1.3
+        animationTriggerName: Jump
+        shakeCameraOnLanding: 1
+--- !u!114 &-2918146963378797426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 456, y: 1080}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -2918146963378797426}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -6178654978077703146}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818632
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818632
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 0.55
+--- !u!114 &-2822704847136511621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 168, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -2822704847136511621}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 6475727105332335718}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818627
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818627
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &-2743081324974481473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaaf9493d73441faff50ec9a9049e89, type: 3}
+  m_Name: Decorator Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 456, y: 888}
+  ports:
+    keys:
+    - child
+    - parent
+    values:
+    - _fieldName: child
+      _node: {fileID: -2743081324974481473}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -6178654978077703146}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -2743081324974481473}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 6475727105332335718}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818629
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818629
+      type: {class: Repeat, ns: BT.Decorators, asm: Assembly-CSharp}
+      data:
+        state: 0
+        RepeatForever: 0
+        RepeatCount: 8
+--- !u!114 &-2453174126500876142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -136, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -2453174126500876142}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818636
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818636
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &-2268898296258042245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: 24}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -2268898296258042245}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -5657163319683861027}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 5529238338353029377}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 4484716672409185844}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 8526423923527505947}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -8490640053106295013}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -2268898296258042245}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818595
+  IsRoot: 1
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818595
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &-1628566699219647096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1464, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -1628566699219647096}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8675981732881552953}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818605
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818605
+      type: {class: TriggerAnime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        TriggerName: Dead
+--- !u!114 &-1198771928810625112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -392, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -1198771928810625112}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 2428324258349165583}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818645
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818645
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &-965227765767244057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 312, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: -965227765767244057}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 6475727105332335718}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818628
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818628
+      type: {class: SpawnFallingRocks, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        spawnAreaCollider: {fileID: 0}
+        rockPrefab: {fileID: 7870441638020242605, guid: 7ff0bd98bfedb60448318e4d1b096c74, type: 3}
+        spawnCount: 8
+        spawnInterval: 0.5
+--- !u!114 &-57902848002102305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: 216}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: -57902848002102305}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: 3093484323178955130}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 8675981732881552953}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -8697337295151487227}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: -57902848002102305}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: child
+        node: {fileID: 4484716672409185844}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818601
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818601
+      type: {class: Selector, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10902e15a0d59194483c15c5cffed7a5, type: 3}
+  m_Name: HollowKnightGraph
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -2268898296258042245}
+  - {fileID: 5529238338353029377}
+  - {fileID: -8490640053106295013}
+  - {fileID: -5657163319683861027}
+  - {fileID: 8526423923527505947}
+  - {fileID: 4484716672409185844}
+  - {fileID: -57902848002102305}
+  - {fileID: 8675981732881552953}
+  - {fileID: 2478074537384029141}
+  - {fileID: -1628566699219647096}
+  - {fileID: 8148645041819542885}
+  - {fileID: 3842332233656176233}
+  - {fileID: -8697337295151487227}
+  - {fileID: -7543670624190036485}
+  - {fileID: 8704645625730478852}
+  - {fileID: 6599031988569775690}
+  - {fileID: 7998872448273709218}
+  - {fileID: -8177876525602253383}
+  - {fileID: 3240246588820170524}
+  - {fileID: -3457184107601454774}
+  - {fileID: -6864124985873339300}
+  - {fileID: -6179962118006083865}
+  - {fileID: 5033844568429044360}
+  - {fileID: 3093484323178955130}
+  - {fileID: -3322006419623565261}
+  - {fileID: 1242113025204971672}
+  - {fileID: -3118000897433790946}
+  - {fileID: 2678346453944186058}
+  - {fileID: 2403689907717149726}
+  - {fileID: 6475727105332335718}
+  - {fileID: -2822704847136511621}
+  - {fileID: -965227765767244057}
+  - {fileID: -2743081324974481473}
+  - {fileID: -6178654978077703146}
+  - {fileID: -4185325919273889781}
+  - {fileID: -2918146963378797426}
+  - {fileID: 841354623603512932}
+  - {fileID: 7174382787874231369}
+  - {fileID: -5834686683162893863}
+  - {fileID: -2453174126500876142}
+  - {fileID: 7527655648295167893}
+  - {fileID: -5285885527969133321}
+  - {fileID: 6408473152539024317}
+  - {fileID: 3385773720578618292}
+  - {fileID: 4238420702307625595}
+  - {fileID: 7955134346715590442}
+  - {fileID: -7299318574935723914}
+  - {fileID: 2428324258349165583}
+  - {fileID: -1198771928810625112}
+  - {fileID: -7523882458168962634}
+  - {fileID: -8453189723317630308}
+  - {fileID: 1371613997598507104}
+  BehaviourTree:
+    Blackboard:
+      CurStage: 0
+    TreeState: 0
+  root: {fileID: -2268898296258042245}
+--- !u!114 &841354623603512932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 584, y: 1080}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 841354623603512932}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -6178654978077703146}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818633
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818633
+      type: {class: TurnAround, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &1242113025204971672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -424, y: 568}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: 1242113025204971672}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -3118000897433790946}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 2678346453944186058}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 2403689907717149726}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 1242113025204971672}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -3322006419623565261}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818622
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818622
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &1371613997598507104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 1371613997598507104}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 2428324258349165583}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818648
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818648
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 2
+--- !u!114 &2403689907717149726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -296, y: 664}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 2403689907717149726}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 1242113025204971672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818625
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818625
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 2
+--- !u!114 &2428324258349165583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -232, y: 760}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: 2428324258349165583}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -7523882458168962634}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -1198771928810625112}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 1371613997598507104}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -8453189723317630308}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 2428324258349165583}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -3322006419623565261}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818644
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818644
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &2478074537384029141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6482285df0e443ea8b5dcdb72e78f989, type: 3}
+  m_Name: Condition Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1608, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 2478074537384029141}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8675981732881552953}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818604
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818604
+      type: {class: IntComparison, ns: BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        Key: CurStage
+        Value: 3
+        Type: 4
+--- !u!114 &2678346453944186058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -424, y: 664}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 2678346453944186058}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 1242113025204971672}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818624
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818624
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &3093484323178955130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaaf9493d73441faff50ec9a9049e89, type: 3}
+  m_Name: Decorator Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -40, y: 328}
+  ports:
+    keys:
+    - child
+    - parent
+    values:
+    - _fieldName: child
+      _node: {fileID: 3093484323178955130}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -3322006419623565261}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 3093484323178955130}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -57902848002102305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818620
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818620
+      type: {class: Repeat, ns: BT.Decorators, asm: Assembly-CSharp}
+      data:
+        state: 0
+        RepeatForever: 1
+        RepeatCount: 1
+--- !u!114 &3240246588820170524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -936, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 3240246588820170524}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818614
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818614
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 1
+--- !u!114 &3385773720578618292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 376, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 3385773720578618292}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818640
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818640
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 0.1
+--- !u!114 &3842332233656176233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1208, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 3842332233656176233}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8675981732881552953}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818607
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818607
+      type: {class: Idle, ns: BT.Actions, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &4238420702307625595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 536, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 4238420702307625595}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818641
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818641
+      type: {class: Shoot, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        weapon:
+          weaponTransform: {fileID: 0}
+          projectilePrefab: {fileID: 1098387748141321094, guid: 86e777f39b8541d409912ded06b55963, type: 3}
+          horizontalForce: 1
+          verticalForce: 0
+        ShakeCamera: 0
+--- !u!114 &4484716672409185844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eaaf9493d73441faff50ec9a9049e89, type: 3}
+  m_Name: Decorator Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -648, y: 120}
+  ports:
+    keys:
+    - child
+    - parent
+    values:
+    - _fieldName: child
+      _node: {fileID: 4484716672409185844}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -57902848002102305}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 4484716672409185844}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -2268898296258042245}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818600
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818600
+      type: {class: Repeat, ns: BT.Decorators, asm: Assembly-CSharp}
+      data:
+        state: 0
+        RepeatForever: 1
+        RepeatCount: 1
+--- !u!114 &5033844568429044360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -712, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 5033844568429044360}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -8697337295151487227}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818619
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818619
+      type: {class: GotoNextStage, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &5529238338353029377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1176, y: 120}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 5529238338353029377}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -2268898296258042245}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818596
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818596
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &6408473152539024317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 248, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 6408473152539024317}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818639
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818639
+      type: {class: TriggerAnime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        TriggerName: Attack
+--- !u!114 &6475727105332335718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 456, y: 792}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: 6475727105332335718}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: 7174382787874231369}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -2822704847136511621}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -965227765767244057}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -2743081324974481473}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 6475727105332335718}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -3322006419623565261}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818626
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818626
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
+--- !u!114 &6599031988569775690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1320, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 6599031988569775690}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818611
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818611
+      type: {class: FacePlayer, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+--- !u!114 &7174382787874231369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 600, y: 888}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 7174382787874231369}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 6475727105332335718}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818634
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818634
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 1
+--- !u!114 &7527655648295167893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -8, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 7527655648295167893}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818637
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818637
+      type: {class: TriggerAnime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        TriggerName: StartAttack
+--- !u!114 &7955134346715590442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 664, y: 632}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 7955134346715590442}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -5834686683162893863}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818642
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818642
+      type: {class: SpawnFallingRocks, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        spawnAreaCollider: {fileID: 0}
+        rockPrefab: {fileID: 7870441638020242605, guid: 7ff0bd98bfedb60448318e4d1b096c74, type: 3}
+        spawnCount: 4
+        spawnInterval: 0.3
+--- !u!114 &7998872448273709218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1192, y: 536}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 7998872448273709218}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8704645625730478852}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818612
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818612
+      type: {class: FreezeTime, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        Duration: 0.1
+--- !u!114 &8148645041819542885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1336, y: 424}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 8148645041819542885}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: 8675981732881552953}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818606
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818606
+      type: {class: DestroyBoss, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        BleedTime: 2
+        BleedEffect: {fileID: 7914164315856010337, guid: 6b719ea77a6d83843b170507c7333a7c, type: 3}
+        ExplodeEffect: {fileID: 346676228444729687, guid: 8e07d73b1080951408e6e474cf243f0c, type: 3}
+--- !u!114 &8526423923527505947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ab27caf7d741139179487e9a8a4cf3, type: 3}
+  m_Name: Action Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -792, y: 120}
+  ports:
+    keys:
+    - parent
+    values:
+    - _fieldName: parent
+      _node: {fileID: 8526423923527505947}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -2268898296258042245}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818599
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818599
+      type: {class: Wait, ns: Core.BT, asm: Assembly-CSharp}
+      data:
+        state: 0
+        WaitTime: 1
+--- !u!114 &8675981732881552953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -1432, y: 328}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: 8675981732881552953}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: -1628566699219647096}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 8148645041819542885}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 3842332233656176233}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 2478074537384029141}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 8675981732881552953}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -57902848002102305}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818602
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818602
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 1
+--- !u!114 &8704645625730478852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7074ec24b036484c8c92d6952c494305, type: 3}
+  m_Name: Composite Graph
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -872, y: 424}
+  ports:
+    keys:
+    - children
+    - parent
+    values:
+    - _fieldName: children
+      _node: {fileID: 8704645625730478852}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: parent
+        node: {fileID: 3240246588820170524}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -6864124985873339300}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 6599031988569775690}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: 7998872448273709218}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -8177876525602253383}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -6179962118006083865}
+        reroutePoints: []
+      - fieldName: parent
+        node: {fileID: -3457184107601454774}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: parent
+      _node: {fileID: 8704645625730478852}
+      _typeQualifiedName: BehaviourTreeGraphPort, Assembly-CSharp, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: children
+        node: {fileID: -8697337295151487227}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  treeNode:
+    rid: 3482774891066818610
+  IsRoot: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 3482774891066818610
+      type: {class: Sequencer, ns: BT.Composites, asm: Assembly-CSharp}
+      data:
+        state: 0
+        children: []
+        abortType: 0
