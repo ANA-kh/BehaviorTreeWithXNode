@@ -41,7 +41,7 @@ AbortType:
 
 
 ## 可视化编辑
-基于XNode实现可视化编辑    (不能可视化编辑的行为树就是答辩。   如果你也用代码构建过复杂树就一定会明白我的心情。。。)
+基于XNode实现可视化编辑
 
 ![](Document/TreeView.png)
 
@@ -64,6 +64,7 @@ XNode节点继承自ScriptableObject，可以直接序列化到Asset中。
 
 
 ## 空洞骑士Boss战复现
+![image](https://github.com/ANA-kh/BehaviorTreeWithXNode/assets/22853405/00d3e989-aad5-4b79-978b-332537811955)
 
 
 
