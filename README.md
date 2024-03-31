@@ -64,7 +64,10 @@ XNode节点继承自ScriptableObject，可以直接序列化到Asset中。
 
 
 ## 空洞骑士Boss战复现
+![image](https://github.com/ANA-kh/BehaviorTreeWithXNode/assets/22853405/32b40f90-0345-46c1-8e07-9efac50733ee)
+
 ![image](https://github.com/ANA-kh/BehaviorTreeWithXNode/assets/22853405/00d3e989-aad5-4b79-978b-332537811955)
+
 
 
 
